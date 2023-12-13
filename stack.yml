@@ -1,0 +1,13 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  image-resize:
+    lang: node8-express
+    handler: ./image-resize
+    image: ssmorodinova/image-resize:latest
+    environment:
+      read_timeout: "10s"
+      write_timeout: "10s"
+      exec_timeout: "10s"
